@@ -295,16 +295,18 @@ export function pageMerci() {
 }
 
 export function page404() {
+  // Servie à n'importe quelle adresse : liens absolus depuis la racine du site.
+  const racine = `${new URL(SITE.url).pathname.replace(/\/$/, '')}/`;
   return {
     fichier: '404.html',
     titre: 'Page introuvable · Libre Cours',
     description: "Cette page n'existe pas ou plus.",
     indexer: false,
-    racine: '/',
+    racine,
     corps: `<section class="wrap page-simple">
 <h1 class="h1-installer">Cette page n'existe pas.</h1>
 <p class="chapeau">Elle a peut-être changé d'adresse. Les rencontres, elles, sont toujours en bas de chez vous.</p>
-<div class="boutons"><a class="btn" href="/dates.html">Voir les prochaines dates</a><a class="btn btn--ghost" href="/">Retour à l'accueil</a></div>
+<div class="boutons"><a class="btn" href="${racine}dates.html">Voir les prochaines dates</a><a class="btn btn--ghost" href="${racine}">Retour à l'accueil</a></div>
 </section>`,
   };
 }
