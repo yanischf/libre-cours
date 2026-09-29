@@ -1,0 +1,41 @@
+[
+  {
+    "id": "belleville-2026-03",
+    "quartier": "Belleville",
+    "lieu": "Le Vieux Comptoir",
+    "date": "2026-03",
+    "question": "Qu'est-ce qui nous manque ici pour être bien ?",
+    "titre": "Une boîte à livres devant la boulangerie",
+    "sujets": ["Un endroit où laisser des livres", "Des bancs à l'ombre", "Se dire bonjour le matin", "Un repas de rue en juin"],
+    "depuis": "Une boîte à livres devant la boulangerie, installée en avril par trois voisins.",
+    "photo": "",
+    "photoAlt": "Le mur d'idées de la rencontre au Vieux Comptoir",
+    "rot": -10
+  },
+  {
+    "id": "butte-aux-cailles-2026-05",
+    "quartier": "Butte-aux-Cailles",
+    "lieu": "Médiathèque de la Butte",
+    "date": "2026-05",
+    "question": "Qu'est-ce qu'on sait faire qu'on ne partage jamais ?",
+    "titre": "Un atelier vélo un samedi par mois",
+    "sujets": ["Réparer un vélo", "Cuisiner pour beaucoup", "Lire à voix haute", "Coudre"],
+    "depuis": "Un atelier vélo un samedi par mois, avec l'équipe de la médiathèque.",
+    "photo": "",
+    "photoAlt": "Le mur d'idées de la rencontre à la Médiathèque de la Butte",
+    "rot": 7
+  },
+  {
+    "id": "sainte-marthe-2026-06",
+    "quartier": "Sainte-Marthe",
+    "lieu": "Maison Sainte-Marthe",
+    "date": "2026-06",
+    "question": "À quoi pourrait servir la cour le dimanche ?",
+    "titre": "Quarante idées pour la cour, remises à la maison",
+    "sujets": ["Un marché de troc", "Jouer aux cartes dehors", "Un cinéma en plein air"],
+    "depuis": "Les idées ont été remises à la maison. La prochaine rencontre en reparlera.",
+    "photo": "",
+    "photoAlt": "Le mur d'idées de la rencontre à la Maison Sainte-Marthe",
+    "rot": -4
+  }
+]

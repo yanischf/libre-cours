@@ -1,0 +1,6 @@
+# Libre Cours : le site peut être lu et indexé par tous les robots,
+# y compris les moteurs de recherche et les assistants IA.
+User-agent: *
+Allow: /
+
+Sitemap: https://librecours.fr/sitemap.xml

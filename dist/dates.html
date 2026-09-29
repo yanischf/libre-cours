@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les prochaines rencontres · Libre Cours</title>
+<meta name="description" content="Les prochaines rencontres Libre Cours près de chez vous : dates, lieux, questions et inscription. Inscription en ligne ou directement au comptoir du lieu. C'est à prix libre.">
+<link rel="canonical" href="https://librecours.fr/dates.html">
+<meta name="theme-color" content="#ff7a3d">
+<link rel="preload" href="fonts/bagel-fat-one-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<style>
+main:has(#f-belleville:checked) .rencontre:not([data-slug="belleville"]),
+main:has(#f-le-12e:checked) .rencontre:not([data-slug="le-12e"]),
+main:has(#f-la-butte-aux-cailles:checked) .rencontre:not([data-slug="la-butte-aux-cailles"]),
+main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) { display: none; }
+</style>
+<link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin><link rel="stylesheet" href="style.css?v=6a747f35">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" type="text/plain" href="llms.txt" title="Résumé du site pour les IA">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Libre Cours">
+<meta property="og:title" content="Les prochaines rencontres · Libre Cours">
+<meta property="og:description" content="Les prochaines rencontres Libre Cours près de chez vous : dates, lieux, questions et inscription. Inscription en ligne ou directement au comptoir du lieu. C'est à prix libre.">
+<meta property="og:url" content="https://librecours.fr/dates.html">
+<meta property="og:image" content="https://librecours.fr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Libre Cours, des rencontres de quartier">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://librecours.fr/#organisation","name":"Libre Cours","url":"https://librecours.fr/","email":"bonjour@librecours.fr","logo":"https://librecours.fr/apple-touch-icon.png","description":"Libre Cours organise des rencontres de quartier à prix libre dans des lieux existants : cafés, médiathèques, ateliers. Une question au mur, des voisins autour des tables, et ce qui s'y dit est gardé.","areaServed":"Paris","parentOrganization":{"@type":"Organization","name":"s9, studio de design","url":"https://section9.studio"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#belleville-2026-10-08","name":"Libre Cours · Belleville · Qu'est-ce qui nous manque ici pour être bien ?","description":"Rencontre de quartier à prix libre au Le Vieux Comptoir. La question au mur : Qu'est-ce qui nous manque ici pour être bien ?","startDate":"2026-10-08T19:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Le Vieux Comptoir","address":{"@type":"PostalAddress","streetAddress":"12 rue des Envierges","postalCode":"75020","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8716,"longitude":2.3887}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/InStock","url":"https://librecours.fr/dates.html#belleville-2026-10-08"},"organizer":{"@id":"https://librecours.fr/#organisation"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#paris-12-2026-10-14","name":"Libre Cours · Le 12e · Qu'est-ce qu'on ferait ensemble si on se connaissait ?","description":"Rencontre de quartier à prix libre au Chez Gudule. La question au mur : Qu'est-ce qu'on ferait ensemble si on se connaissait ?","startDate":"2026-10-14T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Chez Gudule","address":{"@type":"PostalAddress","streetAddress":"Paris 12","postalCode":"75012","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8466,"longitude":2.378}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/InStock","url":"https://librecours.fr/dates.html#paris-12-2026-10-14"},"organizer":{"@id":"https://librecours.fr/#organisation"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#butte-aux-cailles-2026-10-17","name":"Libre Cours · La Butte-aux-Cailles · Qu'est-ce qu'on sait faire qu'on ne partage jamais ?","description":"Rencontre de quartier à prix libre au Médiathèque de la Butte. La question au mur : Qu'est-ce qu'on sait faire qu'on ne partage jamais ?","startDate":"2026-10-17T16:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Médiathèque de la Butte","address":{"@type":"PostalAddress","streetAddress":"3 place Verlaine","postalCode":"75013","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8266,"longitude":2.351}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/InStock","url":"https://librecours.fr/dates.html#butte-aux-cailles-2026-10-17"},"organizer":{"@id":"https://librecours.fr/#organisation"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#sainte-marthe-2026-10-28","name":"Libre Cours · Sainte-Marthe · À quoi pourrait servir la cour le dimanche ?","description":"Rencontre de quartier à prix libre au Maison Sainte-Marthe. La question au mur : À quoi pourrait servir la cour le dimanche ?","startDate":"2026-10-28T18:30:00+01:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Maison Sainte-Marthe","address":{"@type":"PostalAddress","streetAddress":"Maison de quartier","postalCode":"75010","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8736,"longitude":2.3718}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/SoldOut","url":"https://librecours.fr/dates.html#sainte-marthe-2026-10-28"},"organizer":{"@id":"https://librecours.fr/#organisation"}}]}</script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+<div class="wrap entete__in">
+<a class="marque" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp20" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="#f3eee4"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp20">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
+<nav class="nav" aria-label="Navigation principale"><a href="dates.html" aria-current="page">Les dates</a><a href="traces.html">Les traces</a><a href="accueillir.html">Accueillir</a></nav>
+</div>
+</header>
+<main id="contenu">
+<section class="titre-page">
+<div class="wrap titre-page__in">
+<h1 class="h1-page">Les prochaines rencontres.</h1>
+<p class="texte-18">Inscription en ligne ou directement au comptoir du lieu. C'est à prix libre.</p>
+<fieldset class="chips">
+<legend class="cache">Filtrer par quartier</legend>
+<input type="radio" name="quartier" id="f-tous" value="tous" checked><label for="f-tous">Tous</label>
+<input type="radio" name="quartier" id="f-belleville" value="belleville"><label for="f-belleville">Belleville</label>
+<input type="radio" name="quartier" id="f-le-12e" value="le-12e"><label for="f-le-12e">Le 12e</label>
+<input type="radio" name="quartier" id="f-la-butte-aux-cailles" value="la-butte-aux-cailles"><label for="f-la-butte-aux-cailles">La Butte-aux-Cailles</label>
+<input type="radio" name="quartier" id="f-sainte-marthe" value="sainte-marthe"><label for="f-sainte-marthe">Sainte-Marthe</label>
+</fieldset>
+</div>
+</section>
+
+<section class="wrap section-carte">
+<div class="carte" id="carte" role="region" aria-label="Carte des prochaines rencontres">
+<noscript><p class="carte__secours">La carte a besoin de JavaScript. Toutes les rencontres sont listées ci-dessous.</p></noscript>
+</div>
+</section>
+
+<section class="wrap liste-rencontres" aria-label="Liste des prochaines rencontres">
+<article class="rencontre" id="belleville-2026-10-08" data-quartier="Belleville" data-slug="belleville" data-lieu="Le Vieux Comptoir" data-jour="Jeu. 8 oct · 19h" data-num="08.10" data-question="Qu'est-ce qui nous manque ici pour être bien ?" data-lat="48.8716" data-lng="2.3887" data-lien="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20Belleville%20%C2%B7%20Jeu.%208%20oct" data-complet="">
+<div class="rencontre__lieu">
+<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(8 100 100)"><defs><path id="tp10" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp10">LIBRE COURS · LE VIEUX COMPTOIR · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">08.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">JEU · 19H</text></g></svg></div>
+<div><h2>Belleville</h2><p class="caps-14">Le Vieux Comptoir<br>12 rue des Envierges</p></div>
+</div>
+<div class="rencontre__question"><p class="label">La question</p><p class="question-26">Qu'est-ce qui nous manque ici pour être bien ?</p></div>
+<div class="rencontre__infos">
+<p class="caps-17"><time datetime="2026-10-08T19:00:00+02:00">Jeu. 8 oct · 19h</time></p>
+<p class="texte-15">14 places · prix libre</p>
+<a class="btn btn--sm" href="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20Belleville%20%C2%B7%20Jeu.%208%20oct">Je m'inscris en ligne</a>
+<p class="texte-14">Ou directement au comptoir du lieu.</p>
+</div>
+</article>
+<article class="rencontre" id="paris-12-2026-10-14" data-quartier="Le 12e" data-slug="le-12e" data-lieu="Chez Gudule" data-jour="Mer. 14 oct · 18h" data-num="14.10" data-question="Qu'est-ce qu'on ferait ensemble si on se connaissait ?" data-lat="48.8466" data-lng="2.378" data-lien="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20Le%2012e%20%C2%B7%20Mer.%2014%20oct" data-complet="">
+<div class="rencontre__lieu">
+<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(-6 100 100)"><defs><path id="tp11" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp11">LIBRE COURS · CHEZ GUDULE · PARIS 12 · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">14.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">MER · 18H</text></g></svg></div>
+<div><h2>Le 12e</h2><p class="caps-14">Chez Gudule<br>Paris 12</p></div>
+</div>
+<div class="rencontre__question"><p class="label">La question</p><p class="question-26">Qu'est-ce qu'on ferait ensemble si on se connaissait ?</p></div>
+<div class="rencontre__infos">
+<p class="caps-17"><time datetime="2026-10-14T18:00:00+02:00">Mer. 14 oct · 18h</time></p>
+<p class="texte-15">20 places · prix libre</p>
+<a class="btn btn--sm" href="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20Le%2012e%20%C2%B7%20Mer.%2014%20oct">Je m'inscris en ligne</a>
+<p class="texte-14">Ou directement au comptoir du lieu.</p>
+</div>
+</article>
+<article class="rencontre" id="butte-aux-cailles-2026-10-17" data-quartier="La Butte-aux-Cailles" data-slug="la-butte-aux-cailles" data-lieu="Médiathèque de la Butte" data-jour="Sam. 17 oct · 16h" data-num="17.10" data-question="Qu'est-ce qu'on sait faire qu'on ne partage jamais ?" data-lat="48.8266" data-lng="2.351" data-lien="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20La%20Butte-aux-Cailles%20%C2%B7%20Sam.%2017%20oct" data-complet="">
+<div class="rencontre__lieu">
+<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(4 100 100)"><defs><path id="tp12" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp12">LIBRE COURS · MÉDIATHÈQUE DE LA BUTTE · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">17.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">SAM · 16H</text></g></svg></div>
+<div><h2>La Butte-aux-Cailles</h2><p class="caps-14">Médiathèque de la Butte<br>3 place Verlaine</p></div>
+</div>
+<div class="rencontre__question"><p class="label">La question</p><p class="question-26">Qu'est-ce qu'on sait faire qu'on ne partage jamais ?</p></div>
+<div class="rencontre__infos">
+<p class="caps-17"><time datetime="2026-10-17T16:00:00+02:00">Sam. 17 oct · 16h</time></p>
+<p class="texte-15">22 places · prix libre</p>
+<a class="btn btn--sm" href="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20La%20Butte-aux-Cailles%20%C2%B7%20Sam.%2017%20oct">Je m'inscris en ligne</a>
+<p class="texte-14">Ou directement au comptoir du lieu.</p>
+</div>
+</article>
+<article class="rencontre" id="sainte-marthe-2026-10-28" data-quartier="Sainte-Marthe" data-slug="sainte-marthe" data-lieu="Maison Sainte-Marthe" data-jour="Mer. 28 oct · 18h30" data-num="28.10" data-question="À quoi pourrait servir la cour le dimanche ?" data-lat="48.8736" data-lng="2.3718" data-lien="mailto:bonjour@librecours.fr?subject=Liste%20d'attente%20%C2%B7%20Sainte-Marthe%20%C2%B7%20Mer.%2028%20oct" data-complet="1">
+<div class="rencontre__lieu">
+<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(-4 100 100)"><defs><path id="tp13" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp13">LIBRE COURS · MAISON SAINTE-MARTHE · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">28.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">MER · 18H30</text></g></svg></div>
+<div><h2>Sainte-Marthe</h2><p class="caps-14">Maison Sainte-Marthe<br>Maison de quartier</p></div>
+</div>
+<div class="rencontre__question"><p class="label">La question</p><p class="question-26">À quoi pourrait servir la cour le dimanche ?</p></div>
+<div class="rencontre__infos">
+<p class="caps-17"><time datetime="2026-10-28T18:30:00+01:00">Mer. 28 oct · 18h30</time></p>
+<p class="texte-15">Complet · prix libre</p>
+<a class="btn btn--sm btn--ghost" href="mailto:bonjour@librecours.fr?subject=Liste%20d'attente%20%C2%B7%20Sainte-Marthe%20%C2%B7%20Mer.%2028%20oct">Complet · liste d'attente</a>
+<p class="texte-14">Ou directement au comptoir du lieu.</p>
+</div>
+</article>
+</section>
+
+<section class="wrap section-alerte" aria-labelledby="alerte-titre">
+<div class="encart-alerte">
+<div class="encart-alerte__texte">
+<h2 class="titre-34" id="alerte-titre">Pas encore de date près de chez vous ?</h2>
+<p class="texte-17">Laissez votre adresse mail, on vous prévient quand une date s'ouvre près de chez vous.</p>
+</div>
+<form class="alerte alerte--marine" name="alerte" method="post" action="merci.html" data-netlify="true" netlify-honeypot="site-web">
+<p class="cache" aria-hidden="true"><label>Ne pas remplir <input name="site-web" tabindex="-1" autocomplete="off"></label></p>
+<label class="champ">Adresse mail<input type="email" name="email" required autocomplete="email" placeholder="vous@exemple.fr"></label>
+<label class="champ">Quartier souhaité<input type="text" name="quartier" autocomplete="address-level3" placeholder="Belleville, le 11e…"></label>
+<button class="btn btn--orange" type="submit">Me prévenir</button>
+</form>
+</div>
+</section>
+</main>
+<footer class="pied">
+<div class="wrap pied__in">
+<div class="pied__haut">
+<a class="marque marque--pied" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp21" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#ff7a3d" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#ff7a3d" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#ff7a3d"><textPath href="#tp21">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
+<nav class="pied__nav" aria-label="Plan du site">
+<a href="dates.html">Les dates</a>
+<a href="accueillir.html">Accueillir</a>
+<a href="traces.html">Les traces</a>
+<a href="installer.html">Installer la démarche</a>
+</nav>
+</div>
+<div class="pied__bas">
+<p>Libre Cours est conçu et facilité par <a href="https://section9.studio">s9, studio de design</a>.</p>
+<p class="pied__contact"><a href="mailto:bonjour@librecours.fr">bonjour@librecours.fr</a><a href="mentions-legales.html">Mentions légales</a></p>
+</div>
+</div>
+</footer>
+<script src="vendor/leaflet/leaflet.js" defer></script>
+<script src="carte.js" defer></script>
+</body>
+</html>
