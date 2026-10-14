@@ -10,7 +10,6 @@ Contact : bonjour@librecours.fr
 
 - [Accueil](https://librecours.fr/) : le principe, comment se passe une rencontre, ce que ça fait.
 - [Les dates](https://librecours.fr/dates.html) : les prochaines rencontres, avec carte, lieux, questions et inscription.
-- [Les traces](https://librecours.fr/traces.html) : ce que les rencontres passées ont produit.
 - [Accueillir](https://librecours.fr/accueillir.html) : pour les cafés, médiathèques, ateliers et salles qui veulent accueillir une rencontre.
 - [Installer la démarche](https://librecours.fr/installer.html) : accompagnement dans la durée par le studio s9.
 
@@ -19,8 +18,3 @@ Contact : bonjour@librecours.fr
 - Sam 17 octobre 2026, 16h · La Butte-aux-Cailles · Médiathèque de la Butte, 3 place Verlaine (75013 Paris) · Question : « Qu'est-ce qu'on sait faire qu'on ne partage jamais ? » · 22 places · prix libre · Inscription : https://librecours.fr/dates.html#butte-aux-cailles-2026-10-17
 - Mer 28 octobre 2026, 18h30 · Sainte-Marthe · Maison Sainte-Marthe, Maison de quartier (75010 Paris) · Question : « À quoi pourrait servir la cour le dimanche ? » · Complet · prix libre · Inscription : https://librecours.fr/dates.html#sainte-marthe-2026-10-28
 
-## Traces des rencontres passées
-
-- Juin 2026 · Sainte-Marthe · Maison Sainte-Marthe · Question : « À quoi pourrait servir la cour le dimanche ? » · Ce qui est ressorti : Un marché de troc ; Jouer aux cartes dehors ; Un cinéma en plein air · Et depuis : Les idées ont été remises à la maison. La prochaine rencontre en reparlera.
-- Mai 2026 · Butte-aux-Cailles · Médiathèque de la Butte · Question : « Qu'est-ce qu'on sait faire qu'on ne partage jamais ? » · Ce qui est ressorti : Réparer un vélo ; Cuisiner pour beaucoup ; Lire à voix haute ; Coudre · Et depuis : Un atelier vélo un samedi par mois, avec l'équipe de la médiathèque.
-- Mars 2026 · Belleville · Le Vieux Comptoir · Question : « Qu'est-ce qui nous manque ici pour être bien ? » · Ce qui est ressorti : Un endroit où laisser des livres ; Des bancs à l'ombre ; Se dire bonjour le matin ; Un repas de rue en juin · Et depuis : Une boîte à livres devant la boulangerie, installée en avril par trois voisins.

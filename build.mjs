@@ -67,18 +67,17 @@ Contact : ${SITE.mail}
 
 - [Accueil](${SITE.url}/) : le principe, comment se passe une rencontre, ce que ça fait.
 - [Les dates](${SITE.url}/dates.html) : les prochaines rencontres, avec carte, lieux, questions et inscription.
-- [Les traces](${SITE.url}/traces.html) : ce que les rencontres passées ont produit.
-- [Accueillir](${SITE.url}/accueillir.html) : pour les cafés, médiathèques, ateliers et salles qui veulent accueillir une rencontre.
+${SITE.afficherTraces ? `- [Les traces](${SITE.url}/traces.html) : ce que les rencontres passées ont produit.\n` : ''}- [Accueillir](${SITE.url}/accueillir.html) : pour les cafés, médiathèques, ateliers et salles qui veulent accueillir une rencontre.
 - [Installer la démarche](${SITE.url}/installer.html) : accompagnement dans la durée par le studio s9.
 
 ## Prochaines rencontres
 
 ${dates.length ? dates.map((d) => `- ${d.jourLong}, ${d.heure} · ${d.quartier} · ${d.lieu}, ${d.adresse} (${d.codePostal} ${d.ville}) · Question : « ${d.question} » · ${d.placesTexte} · prix libre · Inscription : ${d.inscriptionUrl || `${SITE.url}/dates.html#${d.id}`}`).join('\n') : "Aucune date pour l'instant : les premières rencontres se préparent."}
 
-## Traces des rencontres passées
+${SITE.afficherTraces ? `## Traces des rencontres passées
 
 ${tr.map((t) => `- ${t.dateTexte} · ${t.quartier} · ${t.lieu} · Question : « ${t.question} » · Ce qui est ressorti : ${t.sujets.join(' ; ')} · Et depuis : ${t.depuis}`).join('\n')}
-`);
+` : ''}`);
 
 // En-têtes HTTP (Netlify, Cloudflare Pages) : cache long pour les fichiers qui ne changent pas.
 writeFileSync(out('_headers'), `/fonts/*

@@ -7,6 +7,9 @@ export const SITE = {
   url: (process.env.SITE_URL || 'https://librecours.fr').replace(/\/$/, ''),
   nom: 'Libre Cours',
   mail: 'bonjour@librecours.fr',
+  // Page « Les traces » masquée tant qu'aucune rencontre n'a eu lieu :
+  // passer à true pour remettre les liens (menu, pied de page, plan du site).
+  afficherTraces: false,
   description:
     "Libre Cours organise des rencontres de quartier à prix libre dans des lieux existants : cafés, médiathèques, ateliers. Une question au mur, des voisins autour des tables, et ce qui s'y dit est gardé.",
 };
@@ -26,7 +29,7 @@ const NAV = [
 ];
 
 function entete(actif, racine) {
-  const liens = NAV.map(
+  const liens = NAV.filter(([cle]) => cle !== 'traces' || SITE.afficherTraces).map(
     ([cle, label, href]) =>
       `<a href="${racine}${href}"${cle === actif ? ' aria-current="page"' : ''}>${label}</a>`,
   ).join('');
@@ -46,8 +49,8 @@ function pied(racine) {
 <nav class="pied__nav" aria-label="Plan du site">
 <a href="${racine}dates.html">Les dates</a>
 <a href="${racine}accueillir.html">Accueillir</a>
-<a href="${racine}traces.html">Les traces</a>
-<a href="${racine}installer.html">Installer la démarche</a>
+${SITE.afficherTraces ? `<a href="${racine}traces.html">Les traces</a>
+` : ''}<a href="${racine}installer.html">Installer la démarche</a>
 </nav>
 </div>
 <div class="pied__bas">

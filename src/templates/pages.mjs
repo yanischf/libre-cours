@@ -202,6 +202,7 @@ ${traces.map(trace).join('\n')}
 
   return {
     fichier: 'traces.html',
+    indexer: SITE.afficherTraces,
     titre: 'Ce qui est resté · Libre Cours',
     description:
       "Ce que les rencontres Libre Cours passées ont produit : les murs d'idées en photos, les sujets ressortis, et ce que certains sont devenus.",
