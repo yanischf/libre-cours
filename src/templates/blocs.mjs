@@ -12,6 +12,14 @@ import { SITE } from './gabarit.mjs';
  */
 export const ALERTE_ACTION = process.env.ALERTE_ACTION || 'merci.html';
 
+/**
+ * Attributs d'animation au défilement (voir src/anim.js).
+ * `type` : rise (monte), stamp (coup de tampon), draw (trait qui se dessine).
+ */
+export function anim(type = 'rise', delai = 0) {
+  return ` data-anim="${type}"${delai ? ` style="--d:${Math.min(delai, 1100)}ms"` : ''}`;
+}
+
 /** Photo bichromie orange/noir. Sans fichier, un aplat de la même teinte. */
 export function photo({ src = '', alt = '', ratio, classe = '', surcouche = '', eager = false }) {
   const existe = src && existsSync(new URL(`../${src}`, import.meta.url));
@@ -32,8 +40,8 @@ export function formulaireAlerte(fond = 'marine') {
 }
 
 /** Carte d'une date sur l'accueil. */
-export function carteDate(d) {
-  return `<article class="carte-date">
+export function carteDate(d, attrs = '') {
+  return `<article class="carte-date"${attrs}>
 <div class="carte-date__tete">
 <div><h3>${esc(d.quartier)}</h3><p class="caps-14">${esc(d.lieu)}</p></div>
 <div class="carte-date__tampon">${tampon({ ring: d.ring, l1: d.num, small: d.stamp, size: 36, rot: d.rot })}</div>
@@ -74,16 +82,6 @@ ${d.complet
 </article>`;
 }
 
-/** Vignette de trace sur l'accueil. */
-export function traceMini(t) {
-  const surcouche = `<div class="photo__tampon photo__tampon--100">${tampon({ ring: t.ring, l1: t.mois, size: 32, fill: '#f3eee4', rot: t.rot })}</div>`;
-  return `<a class="trace-mini" href="traces.html#${esc(t.id)}">
-${photo({ src: t.photo, alt: t.photoAlt, ratio: 1.2, surcouche })}
-<span class="caps-14">${esc(t.quartier)} · ${esc(t.lieu)}</span>
-<span class="trace-mini__titre">${esc(t.titre)}</span>
-</a>`;
-}
-
 /** Trace complète sur la page Traces. */
 export function trace(t) {
   const surcouche = `<div class="photo__tampon photo__tampon--150">${tampon({ ring: t.ring, l1: t.mois, size: 34, fill: '#f3eee4', rot: t.rot })}</div>`;
@@ -100,9 +98,9 @@ ${photo({ src: t.photo, alt: t.photoAlt, ratio: 1.3, surcouche })}
 }
 
 /** Liste pointillée titre / texte. `niveau` = h2 ou h3. */
-export function principes(items, niveau = 'h3', classe = '') {
+export function principes(items, niveau = 'h3', classe = '', anime = false) {
   return `<div class="principes${classe ? ' ' + classe : ''}">${items
-    .map(([titre, texte]) => `<div class="principe"><${niveau}>${titre}</${niveau}><p>${texte}</p></div>`)
+    .map(([titre, texte], i) => `<div class="principe"${anime ? anim('rise', i * 140) : ''}><${niveau}>${titre}</${niveau}><p>${texte}</p></div>`)
     .join('\n')}</div>`;
 }
 

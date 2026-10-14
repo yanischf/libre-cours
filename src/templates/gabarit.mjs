@@ -1,4 +1,5 @@
 // Squelette commun : <head>, en-tête, pied de page.
+import { readFileSync } from 'node:fs';
 import { esc } from './outils.mjs';
 import { tampon } from './tampon.mjs';
 
@@ -9,6 +10,14 @@ export const SITE = {
   description:
     "Libre Cours organise des rencontres de quartier à prix libre dans des lieux existants : cafés, médiathèques, ateliers. Une question au mur, des voisins autour des tables, et ce qui s'y dit est gardé.",
 };
+
+// Animations au défilement : une ligne dans <head> (évite le clignotement),
+// le reste en fin de page. Les deux sont inclus pour ne rien charger de plus.
+const ANIM_TETE = `<script>if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>`;
+const ANIM_FIN = `<script>${readFileSync(new URL('../anim.js', import.meta.url), 'utf8')
+  .replace(/^\s*\/\/.*$/gm, '')
+  .replace(/\n\s*\n/g, '\n')
+  .trim()}</script>`;
 
 const NAV = [
   ['dates', 'Les dates', 'dates.html'],
@@ -63,10 +72,11 @@ function pied(racine) {
  * @param {boolean} [p.indexer] false => noindex
  * @param {string} [p.racine]  préfixe des liens internes ("" ou "/")
  * @param {string} p.version   empreinte du CSS pour le cache
+ * @param {boolean} [p.anime] animations au défilement
  */
 export function page({
   fichier, titre, description, corps, actif = '', tete = '', fin = '',
-  jsonld = [], indexer = true, racine = '', version,
+  jsonld = [], indexer = true, racine = '', version, anime = false,
 }) {
   const chemin = fichier === 'index.html' ? '/' : `/${fichier}`;
   const url = SITE.url + chemin;
@@ -83,6 +93,7 @@ export function page({
 <meta name="description" content="${esc(description)}">
 ${indexer ? `<link rel="canonical" href="${url}">` : '<meta name="robots" content="noindex">'}
 <meta name="theme-color" content="#ff7a3d">
+${anime ? ANIM_TETE : ''}
 <link rel="preload" href="${r}fonts/bagel-fat-one-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${r}fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${r}fonts/dm-mono-500.woff2" as="font" type="font/woff2" crossorigin>
@@ -110,7 +121,7 @@ ${entete(actif, r)}
 ${corps}
 </main>
 ${pied(r)}
-${fin}
+${fin}${anime ? ANIM_FIN : ''}
 </body>
 </html>
 `;

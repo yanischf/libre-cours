@@ -1,6 +1,9 @@
 # Libre Cours · site
 
-Site statique en **HTML et CSS pur**. Le seul JavaScript est celui de la carte (page Dates), chargé uniquement sur cette page ; sans lui, la liste et les filtres fonctionnent quand même.
+Site statique en **HTML et CSS pur**. Le JavaScript se limite à deux améliorations, sans lesquelles tout fonctionne et tout reste lisible :
+
+- la carte de la page Dates (Leaflet, chargé uniquement sur cette page) ; sans elle, la liste et les filtres marchent quand même ;
+- les animations au défilement de l'accueil et de la page Accueillir (`src/anim.js`, ~1 Ko inclus dans la page). Le contenu n'est masqué que si le script tourne : sans JavaScript, pour les robots et les IA, ou avec le réglage « réduire les animations », tout s'affiche d'emblée.
 
 Le dossier **`dist/`** est le site prêt à mettre en ligne. Il se dépose tel quel sur n'importe quel hébergeur statique (Netlify, Cloudflare Pages, GitHub Pages, OVH…).
 
@@ -45,6 +48,7 @@ Puis ouvrir http://localhost:4817.
 content/               dates et traces (JSON)
 src/style.css          la feuille de style unique
 src/carte.js           la carte Leaflet (page Dates)
+src/anim.js            les animations au défilement (rise, stamp, draw)
 src/templates/         gabarits des pages (HTML dans des fonctions JS)
 src/fonts/             Bagel Fat One et DM Mono, auto-hébergées (34 Ko)
 src/vendor/leaflet/    Leaflet 1.9.4, auto-hébergé
@@ -53,6 +57,10 @@ outils/visuels.mjs     régénère og.png et les icônes (macOS)
 build.mjs              le générateur
 dist/                  le site généré, à mettre en ligne
 ```
+
+### Animations
+
+Sur un élément, l'attribut `data-anim` choisit l'effet : `rise` (monte en apparaissant), `stamp` (coup de tampon avec rebond) ou `draw` (trait pointillé qui se dessine). Le décalage se règle avec `style="--d:300ms"`. Dans les gabarits, la fonction `anim('stamp', 300)` écrit les deux.
 
 ## Performances, accessibilité, référencement
 

@@ -3,7 +3,7 @@ import { esc } from './outils.mjs';
 import { tampon } from './tampon.mjs';
 import { SITE } from './gabarit.mjs';
 import {
-  photo, formulaireAlerte, carteDate, rencontre, traceMini, trace, principes, eventJsonLd,
+  anim, photo, formulaireAlerte, carteDate, rencontre, trace, principes, eventJsonLd,
 } from './blocs.mjs';
 
 const ORGANISATION = {
@@ -19,57 +19,63 @@ const ORGANISATION = {
 };
 
 /* ------------------------------------------------------------------ Accueil */
-export function accueil({ dates, traces }) {
+const ETAPES_MOMENT = [
+  ['On pousse la porte.', 'Un café, une médiathèque, un atelier. Un verre, et une question au mur.'],
+  ["On s'assoit entre voisins.", "Ceux qu'on n'a jamais croisés, et ceux qui tiennent le lieu. Tout le monde participe."],
+  ['On imagine ensemble.', 'Chacun pose ses idées. On garde celles qui nous font quelque chose.'],
+  ['Rien ne se perd.', 'Tout est noté et remis au lieu. La prochaine rencontre en reparle.'],
+];
+
+export function accueil({ dates }) {
   const plein = dates.length > 0;
   const prochaines = dates.slice(0, 4);
-  const dernieres = traces.slice(0, 3);
 
   const corps = `<section class="hero">
 <div class="wrap hero__in">
-<p class="caps-16">Libre Cours, des rencontres de quartier</p>
-<h1 class="h1-accueil">Faire ensemble, ça commence en bas de chez vous.</h1>
+<p class="caps-16"${anim()}>Libre Cours, des rencontres de quartier</p>
+<h1 class="h1-accueil"${anim('rise', 110)}>Faire ensemble, ça commence en bas de chez vous.</h1>
 <div class="hero__bas">
-<p class="texte-18">Le temps d'une rencontre, dans un lieu de votre quartier, on échange des idées, des envies, des manières de voir le monde, avec des gens qui vivent à deux rues de chez vous. Pas besoin d'être expert, membre ou invité de quelqu'un. Habiter à côté suffit.</p>
-<div class="boutons"><a class="btn" href="dates.html">Voir les prochaines dates</a><a class="btn btn--ghost" href="#moment">Comment ça se passe</a></div>
+<p class="texte-18"${anim('rise', 220)}>Le temps d'une rencontre, dans un lieu de votre quartier, on échange des idées, des envies, des manières de voir le monde, avec des gens qui vivent à deux rues de chez vous. Pas besoin d'être expert, membre ou invité de quelqu'un. Habiter à côté suffit.</p>
+<div class="boutons"${anim('rise', 330)}><a class="btn" href="dates.html">Voir les prochaines dates</a><a class="btn btn--ghost" href="#moment">Comment ça se passe</a></div>
 </div>
-<div class="hero__tampon">${tampon({ l1: 'libre', l2: 'cours', fill: '#f3eee4', rot: -12 })}</div>
+<div class="hero__tampon"><div class="anim-plein"${anim('stamp', 350)}>${tampon({ l1: 'libre', l2: 'cours', fill: '#f3eee4', rot: -12 })}</div></div>
 </div>
 </section>
 
 <section id="moment" class="wrap moment" aria-labelledby="moment-titre">
 <div class="moment__gauche">
-<h2 class="h2" id="moment-titre">Ça se passe comme ça.</h2>
-<div class="moment__photo">
+<h2 class="h2" id="moment-titre"${anim()}>Ça se passe comme ça.</h2>
+<div class="moment__photo"${anim('rise', 110)}>
 ${photo({ src: 'images/moment.jpg', alt: 'Une rencontre Libre Cours, autour des tables', ratio: 1.1 })}
-<div class="bulle"><p class="bulle__label">La question au mur</p><p class="bulle__q">Qu'est-ce qui nous manque ici pour être bien ?</p></div>
+<div class="bulle"><p class="bulle__label">La question au mur</p><p class="bulle__q">Que faudrait-il à ce quartier pour qu'on y reste ?</p></div>
 </div>
 </div>
-<div class="prose">
-<p>Vous poussez la porte d'un lieu du quartier : un café, une médiathèque, un atelier. On vous accueille, vous prenez un verre, une question est affichée au mur. Une vraie question, choisie avec le lieu qui nous reçoit. Du genre : qu'est-ce qui nous manque ici pour être bien ? Qu'est-ce qu'on sait faire qu'on ne partage jamais ?</p>
-<p>Autour des tables, des voisins que vous n'avez jamais croisés. Et souvent, parmi eux, ceux qui tiennent le lieu : le patron, la bibliothécaire, l'équipe. Ils ont choisi la question, et ils participent comme tout le monde, parce qu'ils sont du quartier eux aussi. On parle de ce qui est. On imagine ce qui pourrait être. Chacun pose ses idées, on les regarde ensemble, on garde celles qui nous font quelque chose.</p>
-<p>Et avant de partir, on regarde ensemble ce qui est ressorti : les idées qui reviennent, les envies partagées. Rien ne part à la poubelle : tout est gardé, noté, remis au lieu et à ceux qui étaient là. Certaines de ces idées feront leur chemin, et la prochaine rencontre en reparlera.</p>
-<p class="citation">Vous pouvez parler beaucoup, un peu, ou juste écouter. Les trois font l'affaire.</p>
-<p>Et puis quelques jours plus tard, vous recroisez ces visages à la boulangerie, au marché, à l'école. C'est là que le quartier commence à changer.</p>
+<div class="moment__droite">
+<ol class="frise4">
+${ETAPES_MOMENT.map(([titre, texte], i) => `<li${anim('rise', i * 140)}><span class="pastille${i === 3 ? ' pastille--orange' : ''}" aria-hidden="true">${i + 1}</span><div><h3>${titre}</h3><p>${texte}</p></div></li>`).join('\n')}
+</ol>
+<p class="citation"${anim()}>Parler beaucoup, un peu, ou juste écouter : les trois font l'affaire.</p>
+<p class="texte-16"${anim('rise', 110)}>Quelques jours plus tard, vous recroisez ces visages à la boulangerie. C'est là que le quartier commence à changer.</p>
 </div>
 </section>
 
 <section class="wrap effets" aria-labelledby="effets-titre">
-<h2 class="h2" id="effets-titre">Ce que ça fait.</h2>
+<h2 class="h2" id="effets-titre"${anim()}>Ce que ça fait.</h2>
 <ol class="etapes">
-<li class="etape"><span class="pastille" aria-hidden="true">1</span><h3>Penser tout haut.</h3><p>Au travail on joue un rôle, en ligne on scrolle ou on s'écharpe. Ici, on peut dire « je ne sais pas », changer d'avis, essayer une idée à voix haute. C'est devenu rare, et ça fait un bien fou.</p></li>
-<li class="etape"><span class="pastille" aria-hidden="true">2</span><h3>Rencontrer son quartier.</h3><p>Les gens qui vivent à cent mètres de chez vous ont des vies, des idées et des talents dont vous n'avez aucune idée. Une table et une question suffisent pour que ça change.</p></li>
-<li class="etape"><span class="pastille pastille--orange" aria-hidden="true">3</span><h3>Se rappeler qu'on peut.</h3><p>Poser une idée devant d'autres et la voir reprise, complétée, partagée, ça réveille. On repart avec l'envie de s'y mettre, à son échelle, pour voir ce qui arrive.</p></li>
+<li class="etape"${anim()}><span class="pastille" aria-hidden="true">1</span><h3>Penser tout haut.</h3><p>Au travail on joue un rôle, en ligne on scrolle ou on s'écharpe. Ici, on peut dire « je ne sais pas », changer d'avis, essayer une idée à voix haute. C'est devenu rare, et ça fait un bien fou.</p></li>
+<li class="etape"${anim('rise', 140)}><span class="pastille" aria-hidden="true">2</span><h3>Rencontrer son quartier.</h3><p>Les gens qui vivent à cent mètres de chez vous ont des vies, des idées et des talents dont vous n'avez aucune idée. Une table et une question suffisent pour que ça change.</p></li>
+<li class="etape"${anim('rise', 280)}><span class="pastille pastille--orange" aria-hidden="true">3</span><h3>Se rappeler qu'on peut.</h3><p>Poser une idée devant d'autres et la voir reprise, complétée, partagée, ça réveille. On repart avec l'envie de s'y mettre, à son échelle, pour voir ce qui arrive.</p></li>
 </ol>
 </section>
 
-<div class="bandeau"><div class="wrap"><p>Rien à vendre, rien à prouver, personne à convaincre. Juste un moment où votre voix compte.</p></div></div>
+<div class="bandeau"><div class="wrap"><p${anim()}>Rien à vendre, rien à prouver, personne à convaincre. Juste un moment où votre voix compte.</p></div></div>
 
 <section id="dates" class="fond-marine" aria-labelledby="dates-titre">
 <div class="wrap section-dates">
-<div class="entete-section"><h2 class="h2" id="dates-titre">On se retrouve où ?</h2>${plein ? '<a class="lien" href="dates.html">Toutes les dates</a>' : ''}</div>
+<div class="entete-section"><h2 class="h2" id="dates-titre"${anim()}>On se retrouve où ?</h2>${plein ? `<a class="lien" href="dates.html"${anim('rise', 110)}>Toutes les dates</a>` : ''}</div>
 ${plein
-    ? `<div class="grille-dates">${prochaines.map(carteDate).join('\n')}</div>`
-    : `<div class="encart-vide">
+    ? `<div class="grille-dates">${prochaines.map((d, i) => carteDate(d, anim('rise', i * 140))).join('\n')}</div>`
+    : `<div class="encart-vide"${anim()}>
 <div class="encart-vide__texte"><p class="titre-32">Les premières rencontres se préparent.</p><p class="texte-17">Laissez votre adresse mail, on vous prévient quand une date s'ouvre près de chez vous.</p></div>
 ${formulaireAlerte('creme')}
 </div>`}
@@ -77,31 +83,24 @@ ${formulaireAlerte('creme')}
 </section>
 
 <section class="wrap savoir" aria-labelledby="savoir-titre">
-<h2 class="h2" id="savoir-titre">Trois choses à savoir.</h2>
+<h2 class="h2" id="savoir-titre"${anim()}>Trois choses à savoir.</h2>
 ${principes([
     ["C'est à prix libre.", "Chacun donne ce qu'il veut en partant, y compris rien. Personne ne reste dehors pour une question d'argent."],
     ["C'est accueilli par des lieux qui jouent le jeu.", "Chaque rencontre se tient dans un lieu du quartier qui ouvre ses portes : le temps d'une soirée, le café d'en bas devient la maison de quartier. On choisit le lieu ensemble, on écrit la question avec lui."],
     ['On ne fait pas semblant.', "On ne vous promet pas de grands soirs : une rencontre est une rencontre. Mais ce qui s'y dit est écouté et gardé. Le lieu reçoit le portrait de la rencontre, et quand un sujet résonne avec son équipe, il peut se mettre en marche avec elle. Pas de boîte à idées qui finit à la poubelle."],
-  ])}
+  ], 'h3', '', true)}
 </section>
-${plein && dernieres.length
-    ? `
-<section class="wrap traces-accueil" aria-labelledby="traces-titre">
-<div class="entete-section"><h2 class="h2" id="traces-titre">Ce qui est resté.</h2><a class="lien" href="traces.html">Toutes les traces</a></div>
-<div class="grille-traces">${dernieres.map(traceMini).join('\n')}</div>
-</section>`
-    : ''}
 
 <section class="wrap nom" aria-labelledby="nom-titre">
-<div class="encart-nom">
-<div class="encart-nom__tampon">${tampon({ l1: 'libre', l2: 'cours', rot: -8 })}</div>
+<div class="encart-nom"${anim()}>
+<div class="encart-nom__tampon"><div class="anim-plein"${anim('stamp', 350)}>${tampon({ l1: 'libre', l2: 'cours', rot: -8 })}</div></div>
 <div><h2 id="nom-titre">Pourquoi Libre Cours ?</h2><p>Parce qu'on vient y donner libre cours à ce qu'on pense, à ce qu'on imagine, à ce qu'on n'ose pas dire ailleurs. Et parce qu'il y a une cour cachée dedans : celle de la récré, celle de l'immeuble. Le dernier endroit où l'on savait faire ensemble sans mode d'emploi. On en rouvre une, pour les grands.</p></div>
 </div>
 </section>
 
 <section class="wrap portes" aria-label="Aller plus loin">
-<div class="porte"><h2>Vous avez un lieu ?</h2><p>Un café, une salle, un atelier, et l'envie d'accueillir une rencontre chez vous.</p><a class="btn btn--sm" href="accueillir.html">Accueillir un Libre Cours</a></div>
-<div class="porte"><h2>Vous voulez aller plus loin ?</h2><p>Installer ce genre de démarche dans votre structure ou votre quartier, dans la durée.</p><a class="btn btn--sm btn--ghost" href="installer.html">Voir comment</a></div>
+<div class="porte"${anim()}><h2>Vous avez un lieu ?</h2><p>Un café, une salle, un atelier, et l'envie d'accueillir une rencontre chez vous.</p><a class="btn btn--sm" href="accueillir.html">Accueillir un Libre Cours</a></div>
+<div class="porte"${anim('rise', 140)}><h2>Vous voulez aller plus loin ?</h2><p>Installer ce genre de démarche dans votre structure ou votre quartier, dans la durée.</p><a class="btn btn--sm btn--ghost" href="installer.html">Voir comment</a></div>
 </section>`;
 
   return {
@@ -109,6 +108,7 @@ ${plein && dernieres.length
     titre: 'Libre Cours · Rencontres de quartier à prix libre',
     description: SITE.description,
     corps,
+    anime: true,
     jsonld: [
       ORGANISATION,
       { '@type': 'WebSite', '@id': `${SITE.url}/#site`, name: 'Libre Cours', url: `${SITE.url}/`, inLanguage: 'fr-FR', publisher: { '@id': `${SITE.url}/#organisation` } },
@@ -212,32 +212,91 @@ ${traces.map(trace).join('\n')}
 }
 
 /* --------------------------------------------------------------- Accueillir */
+const MAIL_ACCUEILLIR = `mailto:${SITE.mail}?subject=Accueillir%20un%20Libre%20Cours`;
+const TAMPON_ICI = { ring: 'LIBRE COURS · VOTRE LIEU · VOTRE QUARTIER · ', l1: 'ici ?', fill: '#f3eee4', dashed: true };
+
 export function pageAccueillir() {
-  const corps = `<section class="hero hero--accueillir">
-<div class="wrap hero__in hero__in--accueillir">
-<h1 class="h1-accueillir">Accueillir un Libre Cours chez vous.</h1>
-<p class="texte-18 max-680">Vous tenez un lieu dans le quartier : un café, une médiathèque, un atelier, une salle associative. Accueillir une rencontre, c'est prêter vos murs le temps d'une soirée ou d'un après-midi, et devenir la maison de quartier d'un soir : l'endroit où les habitants se découvrent, se parlent plus longuement qu'au comptoir, et reviennent.</p>
-<div class="hero__tampon hero__tampon--ici">${tampon({ ring: 'LIBRE COURS · VOTRE LIEU · VOTRE QUARTIER · ', l1: 'ici ?', fill: '#f3eee4', dashed: true, rot: -8 })}</div>
+  const gains = [
+    ['Une soirée.', "Des habitants qui vous découvrent, et qui reviennent pour le lieu. Le portrait de ce qui s'est dit chez vous."],
+    ['Un rendez-vous.', 'La rencontre revient chez vous, à votre rythme. Le quartier sait où se retrouver.'],
+    ['Un point de repère.', "L'endroit où les idées du quartier naissent et se mettent en marche. Ce lien ne s'achète pas, il s'accueille."],
+  ];
+  const rendezVous = [
+    ['Un café.', 'Vous nous racontez votre lieu, on vous raconte Libre Cours.'],
+    ['Une question.', "On la choisit ensemble, pour qu'elle vous ressemble."],
+    ['Une date.', 'Un soir creux, dans trois semaines. Vous vous asseyez aux tables comme tout le monde.'],
+  ];
+
+  const corps = `<section class="hero hero--v2">
+<div class="wrap hero__in hero__in--v2">
+<p class="caps-16"${anim()}>Accueillir un Libre Cours</p>
+<h1 class="h1-v2">
+<span class="h1-v2__l1"${anim('rise', 120)}>On ne visite pas un lieu qu'on a contribué à imaginer.</span>
+<span class="appartient"${anim('stamp', 700)}>On y appartient.</span>
+</h1>
+<p class="texte-18 hero-v2__texte"${anim('rise', 1000)}>Le temps d'une soirée, votre lieu devient la maison de quartier.</p>
+<div class="boutons"${anim('rise', 1100)}><a class="btn" href="${MAIL_ACCUEILLIR}">Parlons-en</a><a class="btn btn--ghost" href="#comment">Comment ça marche</a></div>
+</div>
+<div class="hero__tampon hero__tampon--v2"><div class="anim-plein"${anim('stamp', 400)}>${tampon({ ...TAMPON_ICI, rot: -10 })}</div></div>
+</section>
+
+<section class="wrap constat" aria-labelledby="constat-titre">
+<h2 class="caps-14" id="constat-titre"${anim()}>Le constat</h2>
+<p class="constat__phrase"${anim()}>Chaque jour, chez vous, des voisins se croisent sans se parler.</p>
+<p class="constat__phrase constat__phrase--orange"${anim('rise', 250)}>Entre eux, pourtant, il y a tout : des idées, des envies, des talents.</p>
+<p class="texte-18 constat__texte"${anim('rise', 450)}>Libre Cours les réunit : une vingtaine d'habitants, vos tables, une question au mur. On se rencontre, on échange, on repart en se connaissant.</p>
+</section>
+
+<section class="wrap change" aria-labelledby="change-titre">
+<div class="bloc-marine">
+<div class="change__haut">
+<div class="change__texte">
+<p class="caps-14 orange"${anim()}>Ce que ça change</p>
+<h2 class="h2-64 orange" id="change-titre"${anim()}>Devenir le troisième lieu du quartier.</h2>
+<p${anim()}>Après la maison et le travail, il y a ces endroits où l'on se retrouve sans rendez-vous. Le vôtre peut devenir celui où le quartier se parle, imagine et décide.</p>
+</div>
+<ol class="lieux" aria-label="Les trois lieux">
+<li class="lieux__item"${anim()}><span class="lieux__rond" aria-hidden="true">1</span><span class="lieux__label">Chez soi</span></li>
+<li class="lieux__item"${anim('rise', 200)}><span class="lieux__rond" aria-hidden="true">2</span><span class="lieux__label">Le travail</span></li>
+<li class="lieux__item"><div class="lieux__tampon"${anim('stamp', 650)}>${tampon({ ...TAMPON_ICI, ink: '#ff7a3d', accent: '#1b2a8f', rot: -8 })}</div><span class="lieux__label orange">Votre lieu</span></li>
+</ol>
+</div>
+<div class="gains">
+<h3 class="caps-14 orange"${anim()}>Ce que vous y gagnez, soirée après soirée</h3>
+<div class="frise">
+<span class="frise__ligne frise__ligne--orange" aria-hidden="true"${anim('draw')}></span>
+<ol class="gains__liste">
+${gains.map(([titre, texte], i) => `<li class="gain gain--${i + 1}"><span class="point point--${i + 1}" aria-hidden="true"${anim('stamp', [200, 550, 900][i])}></span><h4>${titre}</h4><p>${texte}</p></li>`).join('\n')}
+</ol>
+</div>
+</div>
 </div>
 </section>
 
-<section class="wrap demande" aria-label="Ce que ça demande">
-${principes([
-    ['Ce que ça vous demande.', "Un espace pour une vingtaine de personnes, un créneau, et un échange avec nous en amont pour choisir ensemble la question de la rencontre. C'est tout. Nous apportons le reste : la préparation, l'animation, le matériel."],
-    ['Vous êtes invités à la table.', "Accueillir ne veut pas dire regarder. La question vient de vous, parce qu'elle doit être cohérente avec ce que votre lieu est et ce qu'il désire pour son quartier. Mais le soir venu, vous et votre équipe participez comme tout le monde : vous faites la vie du quartier autant que ceux qui poussent votre porte. Autour des tables, tout le monde est au même niveau."],
-    ['Ce que ça ne vous demande pas.', "Aucun engagement après la rencontre. Elle ne produit ni obligation ni liste de chantiers pour votre équipe : vous recevez ce qui s'est dit, et vous seuls décidez si quelque chose mérite une suite. Vous ne repartez avec aucune charge, aucune promesse à tenir à notre place."],
-    ['Ce que ça vous apporte.', "Une soirée vivante, des habitants qui découvrent votre lieu ou le redécouvrent autrement, et le portrait de la rencontre : ce que les gens ont dit, les idées posées, la décision prise. C'est souvent une découverte. Et si la rencontre revient chez vous régulièrement, votre lieu devient ce point de repère du quartier que rien d'autre ne peut fabriquer."],
-  ], 'h2', 'principes--grands')}
+<section id="comment" class="wrap comment" aria-labelledby="comment-titre">
+<div class="comment__tete">
+<p class="caps-14"${anim()}>Comment ça marche</p>
+<h2 class="h2-64" id="comment-titre"${anim()}>Trois rendez-vous, et le quartier fait le reste.</h2>
+</div>
+<div class="frise">
+<span class="frise__ligne frise__ligne--comment" aria-hidden="true"${anim('draw')}></span>
+<ol class="etapes etapes--comment">
+${rendezVous.map(([titre, texte], i) => `<li class="etape"><span class="pastille${i === 2 ? ' pastille--orange' : ''}" aria-hidden="true"${anim('stamp', [200, 550, 900][i])}>${i + 1}</span><h3>${titre}</h3><p>${texte}</p></li>`).join('\n')}
+</ol>
+</div>
+<div class="apports">
+<div class="apport apport--blanc"${anim()}><p class="label">Vous apportez</p><p class="apport__texte">Un espace pour vingt personnes, deux heures, une chaise à la table.</p></div>
+<div class="apport apport--peche"${anim('rise', 150)}><p class="label">Nous apportons</p><p class="apport__texte">La préparation, l'animation, le matériel, le rangement.</p></div>
+</div>
+<p class="caps-15"${anim()}>Sans engagement · une soirée, et vous décidez librement de la suite.</p>
 </section>
 
-<section class="wrap plus-loin" aria-label="Aller plus loin">
-<div class="encart-peche">
-<p><strong>Et si l'envie vient d'aller plus loin</strong>, faire de ces rencontres un rendez-vous, mettre en marche les sujets qui résonnent avec votre équipe, construire quelque chose de durable avec votre public, ça existe aussi. C'est la seconde étape, elle n'arrive que si vous la désirez. On en parle quand vous voulez.</p>
-<a class="btn btn--sm btn--ghost" href="installer.html">Installer la démarche</a>
-</div>
-<div class="encart-parlons">
-<p>Un café, une salle, un atelier ? Parlons-en.</p>
-<a class="btn btn--orange" href="mailto:${SITE.mail}?subject=Accueillir%20un%20Libre%20Cours">On en discute autour d'un café</a>
+<section class="wrap parlons" aria-label="Contact">
+<div class="bloc-orange">
+<p class="bloc-orange__phrase"${anim()}>Un café, une salle, un atelier ? Parlons-en.</p>
+<a class="btn" href="${MAIL_ACCUEILLIR}"${anim('rise', 150)}>On en discute autour d'un café</a>
+<a class="lien lien--14" href="installer.html"${anim('rise', 250)}>Aller plus loin : installer la démarche</a>
+<div class="bloc-orange__tampon"><div class="anim-plein"${anim('stamp', 350)}>${tampon({ l1: 'libre', l2: 'cours', fill: '#f3eee4', rot: 10 })}</div></div>
 </div>
 </section>`;
 
@@ -245,9 +304,10 @@ ${principes([
     fichier: 'accueillir.html',
     titre: 'Accueillir un Libre Cours chez vous · Libre Cours',
     description:
-      "Vous tenez un café, une médiathèque, un atelier ou une salle associative ? Accueillez une rencontre Libre Cours et devenez la maison de quartier d'un soir.",
+      "On ne visite pas un lieu qu'on a contribué à imaginer. On y appartient. Café, médiathèque, atelier : accueillez une rencontre Libre Cours et devenez le troisième lieu du quartier.",
     actif: 'accueillir',
     corps,
+    anime: true,
     jsonld: [ORGANISATION],
   };
 }
