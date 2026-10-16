@@ -150,6 +150,10 @@ mark { background: var(--peche); color: inherit; padding: 0 .2em; }
 .nav { display: flex; gap: 32px; flex-wrap: wrap; font: 500 16px var(--mono); text-transform: uppercase; }
 .nav a { display: flex; flex-direction: column; gap: 5px; padding: 12px 0; }
 .nav a[aria-current='page']::after { content: ''; height: 3px; background: var(--marine); border-radius: 2px; }
+.nav .nav__insta { justify-content: center; padding: 8px 0; }
+.icone-insta { width: 24px; height: 24px; flex: none; }
+.pied__insta { display: inline-flex; align-items: center; gap: 8px; }
+.pied__insta .icone-insta { width: 18px; height: 18px; }
 
 /* ---------- Pied de page ---------- */
 .pied { background: var(--marine); color: var(--creme); }

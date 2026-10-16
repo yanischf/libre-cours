@@ -12,6 +12,7 @@ const ORGANISATION = {
   name: 'Libre Cours',
   url: `${SITE.url}/`,
   email: SITE.mail,
+  sameAs: [SITE.instagram],
   logo: `${SITE.url}/apple-touch-icon.png`,
   description: SITE.description,
   areaServed: 'Paris',

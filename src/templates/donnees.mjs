@@ -1,6 +1,7 @@
 // Lecture des contenus (content/*.json) et calcul des champs dérivés.
 import { readFileSync } from 'node:fs';
 import { rotation, slug } from './outils.mjs';
+import { SITE } from './gabarit.mjs';
 
 const TZ = 'Europe/Paris';
 const JOURS_COURTS = ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'];
@@ -49,7 +50,7 @@ export function rencontres(maintenant = new Date()) {
     .map((r) => ({
       ...r,
       lien: r.inscriptionUrl ||
-        `mailto:bonjour@librecours.fr?subject=${encodeURIComponent(
+        `mailto:${SITE.mail}?subject=${encodeURIComponent(
           `${r.complet ? "Liste d'attente" : 'Inscription'} · ${r.quartier} · ${r.jour}`,
         )}`,
     }));

@@ -6,7 +6,8 @@ import { tampon } from './tampon.mjs';
 export const SITE = {
   url: (process.env.SITE_URL || 'https://librecours.xyz').replace(/\/$/, ''),
   nom: 'Libre Cours',
-  mail: 'bonjour@librecours.fr',
+  mail: 'contact@librecours.xyz',
+  instagram: 'https://www.instagram.com/librecours.xyz/',
   // Page « Les traces » masquée tant qu'aucune rencontre n'a eu lieu :
   // passer à true pour remettre les liens (menu, pied de page, plan du site).
   afficherTraces: false,
@@ -22,6 +23,8 @@ const ANIM_FIN = `<script>${readFileSync(new URL('../anim.js', import.meta.url),
   .replace(/\n\s*\n/g, '\n')
   .trim()}</script>`;
 
+const ICONE_INSTA = '<svg class="icone-insta" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></svg>';
+
 const NAV = [
   ['dates', 'Les dates', 'dates.html'],
   ['traces', 'Les traces', 'traces.html'],
@@ -36,7 +39,7 @@ function entete(actif, racine) {
   return `<header class="entete">
 <div class="wrap entete__in">
 <a class="marque" href="${racine || './'}"><span class="marque__tampon">${tampon({ l1: 'libre', l2: 'cours', size: 36, fill: '#f3eee4' })}</span><span class="marque__nom">Libre Cours</span></a>
-<nav class="nav" aria-label="Navigation principale">${liens}</nav>
+<nav class="nav" aria-label="Navigation principale">${liens}<a class="nav__insta" href="${SITE.instagram}" aria-label="Libre Cours sur Instagram">${ICONE_INSTA}</a></nav>
 </div>
 </header>`;
 }
@@ -55,7 +58,7 @@ ${SITE.afficherTraces ? `<a href="${racine}traces.html">Les traces</a>
 </div>
 <div class="pied__bas">
 <p>Libre Cours est conçu et facilité par <a href="https://section9.studio">s9, studio de design</a>.</p>
-<p class="pied__contact"><a href="mailto:${SITE.mail}">${SITE.mail}</a><a href="${racine}mentions-legales.html">Mentions légales</a></p>
+<p class="pied__contact"><a href="mailto:${SITE.mail}">${SITE.mail}</a><a class="pied__insta" href="${SITE.instagram}">${ICONE_INSTA}Instagram</a><a href="${racine}mentions-legales.html">Mentions légales</a></p>
 </div>
 </div>
 </footer>`;

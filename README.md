@@ -26,7 +26,7 @@ Règles automatiques :
 
 - Les dates passées disparaissent au prochain `node build.mjs`. Pensez à relancer la génération après chaque rencontre.
 - S'il n'y a aucune date à venir, la section « On se retrouve où ? » de l'accueil affiche « Annonce bientôt. » avec un bouton « Me prévenir », et la page Dates n'affiche que « Les premières rencontres se préparent. » avec le formulaire d'alerte (ni filtres ni carte).
-- Sans `inscriptionUrl`, les boutons « Je m'inscris » ouvrent un mail vers bonjour@librecours.fr.
+- Sans `inscriptionUrl`, les boutons « Je m'inscris » ouvrent un mail vers contact@librecours.xyz (adresse et lien Instagram réglés dans `SITE`, en haut de `src/templates/gabarit.mjs`).
 - `places: 0` ou `complet: true` affiche « Complet · liste d'attente ».
 - `rot` (rotation du tampon) et `ring` (texte de l'anneau) sont facultatifs.
 
