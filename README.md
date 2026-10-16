@@ -11,7 +11,7 @@ Le dossier **`dist/`** est le site prêt à mettre en ligne. Il se dépose tel q
 
 Les contenus sont dans `content/` :
 
-- `content/rencontres.json` : les prochaines rencontres (quartier, lieu, adresse, date ISO avec fuseau, question, places, complet, coordonnées GPS, lien d'inscription).
+- `content/rencontres.json` : les prochaines rencontres (quartier, lieu, adresse, date ISO avec fuseau, question, places, complet, coordonnées GPS, lien d'inscription). Vide pour l'instant ; `content/rencontres.exemple.json` montre le format, avec quatre rencontres fictives à recopier.
 - `content/traces.json` : les rencontres passées (question, sujets ressortis, « Et depuis », photo).
 
 Puis on régénère le site :
@@ -25,7 +25,7 @@ Le générateur n'a aucune dépendance (Node 18 ou plus). Il calcule tout seul l
 Règles automatiques :
 
 - Les dates passées disparaissent au prochain `node build.mjs`. Pensez à relancer la génération après chaque rencontre.
-- S'il n'y a aucune date à venir, l'accueil et la page Dates passent en « Les premières rencontres se préparent. » avec le formulaire d'alerte.
+- S'il n'y a aucune date à venir, la section « On se retrouve où ? » de l'accueil affiche « Annonce bientôt. » avec un bouton « Me prévenir », et la page Dates n'affiche que « Les premières rencontres se préparent. » avec le formulaire d'alerte (ni filtres ni carte).
 - Sans `inscriptionUrl`, les boutons « Je m'inscris » ouvrent un mail vers bonjour@librecours.fr.
 - `places: 0` ou `complet: true` affiche « Complet · liste d'attente ».
 - `rot` (rotation du tampon) et `ring` (texte de l'anneau) sont facultatifs.

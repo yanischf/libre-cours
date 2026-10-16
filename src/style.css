@@ -276,18 +276,18 @@ mark { background: var(--peche); color: inherit; padding: 0 .2em; }
 .carte-date__tete > div:first-child { display: flex; flex-direction: column; gap: 6px; }
 .carte-date h3 { font: 400 32px/1 var(--bagel); }
 .carte-date__tampon { flex: none; width: 90px; height: 90px; margin: -8px -8px 0 0; }
+.bientot {
+  background: var(--creme); color: var(--marine); border-radius: 36px 36px 36px 6px;
+  padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; flex-wrap: wrap;
+}
+.bientot :focus-visible { outline-color: var(--marine); }
+.bientot__texte { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.bientot__titre { font: 400 clamp(36px, 4.6vw, 58px)/1 var(--bagel); color: var(--orange-texte); }
+.bientot__tampon { flex: none; width: 150px; height: 150px; }
 .carte-date__pied {
   margin-top: auto; border-top: 2px dashed var(--marine); padding-top: 14px;
   display: flex; flex-direction: column; gap: 12px;
 }
-.encart-vide {
-  background: var(--creme); color: var(--marine);
-  border-radius: 40px 40px 40px 6px; padding: 40px;
-  display: grid; gap: 36px; align-items: end;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-}
-.encart-vide :focus-visible { outline-color: var(--marine); }
-.encart-vide__texte { display: flex; flex-direction: column; gap: 14px; }
 
 /* ---------- Listes pointillées ---------- */
 .savoir { display: flex; flex-direction: column; gap: 28px; padding-top: 110px; }
@@ -571,7 +571,9 @@ mark { background: var(--peche); color: inherit; padding: 0 .2em; }
   .rencontre__lieu { gap: 16px; }
   .rencontre__tampon { width: 96px; height: 96px; }
   .rencontre h2 { font-size: 30px; }
-  .encart-alerte, .encart-vide { padding: 32px 24px; }
+  .encart-alerte { padding: 32px 24px; }
+  .bientot { padding: 28px 24px; }
+  .bientot__tampon { width: 110px; height: 110px; }
   .section-alerte { padding-block: 56px 88px; }
   .liste-traces { gap: 72px; padding-block: 56px 88px; }
   .trace { gap: 44px; }

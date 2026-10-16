@@ -11,12 +11,7 @@
 <link rel="preload" href="fonts/bagel-fat-one-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dm-mono-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-<style>
-main:has(#f-la-butte-aux-cailles:checked) .rencontre:not([data-slug="la-butte-aux-cailles"]),
-main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) { display: none; }
-</style>
-<link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin><link rel="stylesheet" href="style.css?v=243c839b">
+<link rel="stylesheet" href="style.css?v=4437f099">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="alternate" type="text/plain" href="llms.txt" title="Résumé du site pour les IA">
@@ -31,13 +26,13 @@ main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) {
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Libre Cours, des rencontres de quartier">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://librecours.fr/#organisation","name":"Libre Cours","url":"https://librecours.fr/","email":"bonjour@librecours.fr","logo":"https://librecours.fr/apple-touch-icon.png","description":"Libre Cours organise des rencontres de quartier à prix libre dans des lieux existants : cafés, médiathèques, ateliers. Une question au mur, des voisins autour des tables, et ce qui s'y dit est gardé.","areaServed":"Paris","parentOrganization":{"@type":"Organization","name":"s9, studio de design","url":"https://section9.studio"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#butte-aux-cailles-2026-10-17","name":"Libre Cours · La Butte-aux-Cailles · Qu'est-ce qu'on sait faire qu'on ne partage jamais ?","description":"Rencontre de quartier à prix libre au Médiathèque de la Butte. La question au mur : Qu'est-ce qu'on sait faire qu'on ne partage jamais ?","startDate":"2026-10-17T16:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Médiathèque de la Butte","address":{"@type":"PostalAddress","streetAddress":"3 place Verlaine","postalCode":"75013","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8266,"longitude":2.351}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/InStock","url":"https://librecours.fr/dates.html#butte-aux-cailles-2026-10-17"},"organizer":{"@id":"https://librecours.fr/#organisation"}},{"@type":"Event","@id":"https://librecours.fr/dates.html#sainte-marthe-2026-10-28","name":"Libre Cours · Sainte-Marthe · À quoi pourrait servir la cour le dimanche ?","description":"Rencontre de quartier à prix libre au Maison Sainte-Marthe. La question au mur : À quoi pourrait servir la cour le dimanche ?","startDate":"2026-10-28T18:30:00+01:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","isAccessibleForFree":true,"location":{"@type":"Place","name":"Maison Sainte-Marthe","address":{"@type":"PostalAddress","streetAddress":"Maison de quartier","postalCode":"75010","addressLocality":"Paris","addressCountry":"FR"},"geo":{"@type":"GeoCoordinates","latitude":48.8736,"longitude":2.3718}},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Prix libre : chacun donne ce qu'il veut en partant, y compris rien.","availability":"https://schema.org/SoldOut","url":"https://librecours.fr/dates.html#sainte-marthe-2026-10-28"},"organizer":{"@id":"https://librecours.fr/#organisation"}}]}</script>
+<script type="application/ld+json">{"@type":"Organization","@id":"https://librecours.fr/#organisation","name":"Libre Cours","url":"https://librecours.fr/","email":"bonjour@librecours.fr","logo":"https://librecours.fr/apple-touch-icon.png","description":"Libre Cours organise des rencontres de quartier à prix libre dans des lieux existants : cafés, médiathèques, ateliers. Une question au mur, des voisins autour des tables, et ce qui s'y dit est gardé.","areaServed":"Paris","parentOrganization":{"@type":"Organization","name":"s9, studio de design","url":"https://section9.studio"}}</script>
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
 <header class="entete">
 <div class="wrap entete__in">
-<a class="marque" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp15" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="#f3eee4"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp15">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
+<a class="marque" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp12" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="#f3eee4"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp12">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
 <nav class="nav" aria-label="Navigation principale"><a href="dates.html" aria-current="page">Les dates</a><a href="accueillir.html">Accueillir</a></nav>
 </div>
 </header>
@@ -46,54 +41,15 @@ main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) {
 <div class="wrap titre-page__in">
 <h1 class="h1-page">Les prochaines rencontres.</h1>
 <p class="texte-18">Inscription en ligne ou directement au comptoir du lieu. C'est à prix libre.</p>
-<fieldset class="chips">
-<legend class="cache">Filtrer par quartier</legend>
-<input type="radio" name="quartier" id="f-tous" value="tous" checked><label for="f-tous">Tous</label>
-<input type="radio" name="quartier" id="f-la-butte-aux-cailles" value="la-butte-aux-cailles"><label for="f-la-butte-aux-cailles">La Butte-aux-Cailles</label>
-<input type="radio" name="quartier" id="f-sainte-marthe" value="sainte-marthe"><label for="f-sainte-marthe">Sainte-Marthe</label>
-</fieldset>
+
 </div>
 </section>
 
-<section class="wrap section-carte">
-<div class="carte" id="carte" role="region" aria-label="Carte des prochaines rencontres">
-<noscript><p class="carte__secours">La carte a besoin de JavaScript. Toutes les rencontres sont listées ci-dessous.</p></noscript>
-</div>
-</section>
-
-<section class="wrap liste-rencontres" aria-label="Liste des prochaines rencontres">
-<article class="rencontre" id="butte-aux-cailles-2026-10-17" data-quartier="La Butte-aux-Cailles" data-slug="la-butte-aux-cailles" data-lieu="Médiathèque de la Butte" data-jour="Sam. 17 oct · 16h" data-num="17.10" data-question="Qu'est-ce qu'on sait faire qu'on ne partage jamais ?" data-lat="48.8266" data-lng="2.351" data-lien="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20La%20Butte-aux-Cailles%20%C2%B7%20Sam.%2017%20oct" data-complet="">
-<div class="rencontre__lieu">
-<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(4 100 100)"><defs><path id="tp5" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp5">LIBRE COURS · MÉDIATHÈQUE DE LA BUTTE · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">17.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">SAM · 16H</text></g></svg></div>
-<div><h2>La Butte-aux-Cailles</h2><p class="caps-14">Médiathèque de la Butte<br>3 place Verlaine</p></div>
-</div>
-<div class="rencontre__question"><p class="label">La question</p><p class="question-26">Qu'est-ce qu'on sait faire qu'on ne partage jamais ?</p></div>
-<div class="rencontre__infos">
-<p class="caps-17"><time datetime="2026-10-17T16:00:00+02:00">Sam. 17 oct · 16h</time></p>
-<p class="texte-15">22 places · prix libre</p>
-<a class="btn btn--sm" href="mailto:bonjour@librecours.fr?subject=Inscription%20%C2%B7%20La%20Butte-aux-Cailles%20%C2%B7%20Sam.%2017%20oct">Je m'inscris en ligne</a>
-<p class="texte-14">Ou directement au comptoir du lieu.</p>
-</div>
-</article>
-<article class="rencontre" id="sainte-marthe-2026-10-28" data-quartier="Sainte-Marthe" data-slug="sainte-marthe" data-lieu="Maison Sainte-Marthe" data-jour="Mer. 28 oct · 18h30" data-num="28.10" data-question="À quoi pourrait servir la cour le dimanche ?" data-lat="48.8736" data-lng="2.3718" data-lien="mailto:bonjour@librecours.fr?subject=Liste%20d'attente%20%C2%B7%20Sainte-Marthe%20%C2%B7%20Mer.%2028%20oct" data-complet="1">
-<div class="rencontre__lieu">
-<div class="rencontre__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(-4 100 100)"><defs><path id="tp6" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#1b2a8f" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#1b2a8f" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#1b2a8f"><textPath href="#tp6">LIBRE COURS · MAISON SAINTE-MARTHE · </textPath></text><text x="100" y="112" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#ff7a3d">28.10</text><text x="100" y="140" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" letter-spacing="2" fill="#1b2a8f">MER · 18H30</text></g></svg></div>
-<div><h2>Sainte-Marthe</h2><p class="caps-14">Maison Sainte-Marthe<br>Maison de quartier</p></div>
-</div>
-<div class="rencontre__question"><p class="label">La question</p><p class="question-26">À quoi pourrait servir la cour le dimanche ?</p></div>
-<div class="rencontre__infos">
-<p class="caps-17"><time datetime="2026-10-28T18:30:00+01:00">Mer. 28 oct · 18h30</time></p>
-<p class="texte-15">Complet · prix libre</p>
-<a class="btn btn--sm btn--ghost" href="mailto:bonjour@librecours.fr?subject=Liste%20d'attente%20%C2%B7%20Sainte-Marthe%20%C2%B7%20Mer.%2028%20oct">Complet · liste d'attente</a>
-<p class="texte-14">Ou directement au comptoir du lieu.</p>
-</div>
-</article>
-</section>
 
 <section class="wrap section-alerte" aria-labelledby="alerte-titre">
 <div class="encart-alerte">
 <div class="encart-alerte__texte">
-<h2 class="titre-34" id="alerte-titre">Pas encore de date près de chez vous ?</h2>
+<h2 class="titre-34" id="alerte-titre">Les premières rencontres se préparent.</h2>
 <p class="texte-17">Laissez votre adresse mail, on vous prévient quand une date s'ouvre près de chez vous.</p>
 </div>
 <form class="alerte alerte--marine" name="alerte" method="post" action="merci.html" data-netlify="true" netlify-honeypot="site-web">
@@ -108,7 +64,7 @@ main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) {
 <footer class="pied">
 <div class="wrap pied__in">
 <div class="pied__haut">
-<a class="marque marque--pied" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp16" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#ff7a3d" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#ff7a3d" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#ff7a3d"><textPath href="#tp16">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
+<a class="marque marque--pied" href="./"><span class="marque__tampon"><svg class="tampon" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g transform="rotate(0 100 100)"><defs><path id="tp13" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><circle cx="100" cy="100" r="97" fill="none"/><circle cx="100" cy="100" r="93" fill="none" stroke="#ff7a3d" stroke-width="6"/><circle cx="100" cy="100" r="64" fill="none" stroke="#ff7a3d" stroke-width="2.5"/><text font-family="DM Mono, monospace" font-weight="500" font-size="14.5" letter-spacing="3" fill="#ff7a3d"><textPath href="#tp13">LIBRE COURS · RENCONTRES DE QUARTIER · </textPath></text><text x="100" y="98" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">libre</text><text x="100" y="132" text-anchor="middle" font-family="Bagel Fat One, sans-serif" font-size="36" fill="#f3eee4">cours</text></g></svg></span><span class="marque__nom">Libre Cours</span></a>
 <nav class="pied__nav" aria-label="Plan du site">
 <a href="dates.html">Les dates</a>
 <a href="accueillir.html">Accueillir</a>
@@ -121,7 +77,6 @@ main:has(#f-sainte-marthe:checked) .rencontre:not([data-slug="sainte-marthe"]) {
 </div>
 </div>
 </footer>
-<script src="vendor/leaflet/leaflet.js" defer></script>
-<script src="carte.js" defer></script>
+
 </body>
 </html>

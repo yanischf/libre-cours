@@ -75,13 +75,12 @@ ${ETAPES_MOMENT.map(([titre, texte], i) => `<li${anim('rise', i * 140)}><span cl
 <div class="entete-section"><h2 class="h2" id="dates-titre"${anim()}>On se retrouve où ?</h2>${plein ? `<a class="lien" href="dates.html"${anim('rise', 110)}>Toutes les dates</a>` : ''}</div>
 ${plein
     ? `<div class="grille-dates">${prochaines.map((d, i) => carteDate(d, anim('rise', i * 140))).join('\n')}</div>`
-    : `<div class="encart-vide"${anim()}>
-<div class="encart-vide__texte"><p class="titre-32">Les premières rencontres se préparent.</p><p class="texte-17">Laissez votre adresse mail, on vous prévient quand une date s'ouvre près de chez vous.</p></div>
-${formulaireAlerte('creme')}
+    : `<div class="bientot"${anim()}>
+<div class="bientot__texte"><p class="bientot__titre">Annonce bientôt.</p><a class="btn btn--sm" href="dates.html#alerte-titre">Me prévenir</a></div>
+<div class="bientot__tampon"><div class="anim-plein"${anim('stamp', 350)}>${tampon({ ring: 'LIBRE COURS · PROCHAINE RENCONTRE · ', l1: 'bientôt', size: 30, dashed: true, rot: -8 })}</div></div>
 </div>`}
 </div>
 </section>
-
 <section class="wrap savoir" aria-labelledby="savoir-titre">
 <h2 class="h2" id="savoir-titre"${anim()}>Trois choses à savoir.</h2>
 ${principes([
