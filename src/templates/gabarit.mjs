@@ -4,7 +4,7 @@ import { esc } from './outils.mjs';
 import { tampon } from './tampon.mjs';
 
 export const SITE = {
-  url: (process.env.SITE_URL || 'https://librecours.fr').replace(/\/$/, ''),
+  url: (process.env.SITE_URL || 'https://librecours.xyz').replace(/\/$/, ''),
   nom: 'Libre Cours',
   mail: 'bonjour@librecours.fr',
   // Page « Les traces » masquée tant qu'aucune rencontre n'a eu lieu :

@@ -71,7 +71,7 @@ Sur un élément, l'attribut `data-anim` choisit l'effet : `rise` (monte en appa
 
 ## À brancher avant la mise en ligne
 
-1. **Adresse du site** : `https://librecours.fr` par défaut. Pour une autre adresse : `SITE_URL=https://exemple.fr node build.mjs`.
+1. **Adresse du site** : `https://librecours.xyz` (domaine OVH, déclaré dans les réglages Pages du dépôt ; la variable de dépôt `SITE_URL` fixe l'adresse utilisée par le déploiement). Pour générer avec une autre adresse : `SITE_URL=https://exemple.fr node build.mjs`.
 2. **Formulaire « Me prévenir »** : il envoie à `merci.html`. Sur Netlify, rien à faire, les inscriptions arrivent dans l'onglet Forms. Ailleurs, générez avec l'URL de votre outil d'emailing : `ALERTE_ACTION=https://… node build.mjs` (Brevo, Buttondown…).
 3. **Inscriptions** : renseigner `inscriptionUrl` pour chaque rencontre (HelloAsso, Billetweb…), sinon c'est le mail.
 4. **Mentions légales** : compléter les passages `[à compléter]` dans `src/templates/pages.mjs` (éditeur, SIRET, hébergeur).

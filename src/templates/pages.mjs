@@ -380,7 +380,7 @@ export function pageMentions() {
     corps: `<section class="wrap page-simple mentions">
 <h1 class="h1-installer">Mentions légales.</h1>
 <h2>Éditeur</h2>
-<p>Le site librecours.fr est édité par s9, studio de design. Adresse : ${aCompleter}. SIRET : ${aCompleter}. Directeur de la publication : ${aCompleter}. Contact : <a href="mailto:${SITE.mail}">${SITE.mail}</a>.</p>
+<p>Le site librecours.xyz est édité par s9, studio de design. Adresse : ${aCompleter}. SIRET : ${aCompleter}. Directeur de la publication : ${aCompleter}. Contact : <a href="mailto:${SITE.mail}">${SITE.mail}</a>.</p>
 <h2>Hébergement</h2>
 <p>Hébergeur : ${aCompleter} (raison sociale, adresse, téléphone).</p>
 <h2>Données personnelles</h2>

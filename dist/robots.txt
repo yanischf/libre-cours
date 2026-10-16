@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://librecours.fr/sitemap.xml
+Sitemap: https://librecours.xyz/sitemap.xml
