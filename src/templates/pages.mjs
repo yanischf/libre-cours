@@ -47,7 +47,12 @@ export function accueil({ dates }) {
 <div class="moment__gauche">
 <h2 class="h2" id="moment-titre"${anim()}>Ça se passe comme ça.</h2>
 <div class="moment__photo"${anim('rise', 110)}>
-${photo({ src: 'images/moment.jpg', alt: 'Une rencontre Libre Cours, autour des tables', ratio: 1.1 })}
+${photo({
+    tailles: [['images/moment-700.jpg', 700], ['images/moment-1200.jpg', 1200]],
+    sizes: '(min-width: 824px) min(548px, 45vw), calc(100vw - 40px)',
+    alt: "Une dizaine de voisins debout en cercle dans un bar aux murs de briques, qui discutent et s'écoutent",
+    ratio: 1.1,
+  })}
 <div class="bulle"><p class="bulle__label">La question au mur</p><p class="bulle__q">Que faudrait-il à ce quartier pour qu'on y reste ?</p></div>
 </div>
 </div>

@@ -20,11 +20,16 @@ export function anim(type = 'rise', delai = 0) {
   return ` data-anim="${type}"${delai ? ` style="--d:${Math.min(delai, 1100)}ms"` : ''}`;
 }
 
-/** Photo bichromie orange/noir. Sans fichier, un aplat de la même teinte. */
-export function photo({ src = '', alt = '', ratio, classe = '', surcouche = '', eager = false }) {
-  const existe = src && existsSync(new URL(`../${src}`, import.meta.url));
+/**
+ * Photo bichromie orange/noir. Sans fichier, un aplat de la même teinte.
+ * `tailles` : [[fichier, largeur], …] pour un srcset (le premier sert de src).
+ */
+export function photo({ src = '', alt = '', ratio, classe = '', surcouche = '', eager = false, tailles = [], sizes = '' }) {
+  const fichiers = tailles.length ? tailles : [[src]];
+  const existe = fichiers[0][0] && fichiers.every(([f]) => existsSync(new URL(`../${f}`, import.meta.url)));
+  const srcset = tailles.length > 1 ? ` srcset="${tailles.map(([f, w]) => `${esc(f)} ${w}w`).join(', ')}" sizes="${esc(sizes)}"` : '';
   const img = existe
-    ? `<img src="${esc(src)}" alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
+    ? `<img src="${esc(fichiers[0][0])}"${srcset} alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
     : '';
   return `<div class="photo${existe ? '' : ' photo--vide'}${classe ? ' ' + classe : ''}" style="aspect-ratio:${ratio}">${img}${surcouche}</div>`;
 }

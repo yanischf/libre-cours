@@ -32,7 +32,7 @@ Règles automatiques :
 
 ### Photos
 
-Déposez les photos dans `src/images/` et renseignez le champ `photo` (ex. `"images/belleville-mars.jpg"`) dans `traces.json`. La photo de l'accueil s'appelle `src/images/moment.jpg`. Le traitement bichromie orange/noir est appliqué par le CSS ; sans photo, un aplat orange prend sa place. Pensez à compresser les images (JPEG ou WebP, 1600 px de large maximum).
+Déposez les photos dans `src/images/` et renseignez le champ `photo` (ex. `"images/belleville-mars.jpg"`) dans `traces.json`. La photo de l'accueil existe en deux tailles, `src/images/moment-700.jpg` et `moment-1200.jpg` (recadrées au format 1,1, en niveaux de gris, JPEG qualité 45). Le traitement bichromie orange/noir est appliqué par le CSS ; sans photo, un aplat orange prend sa place. Pensez à compresser les images (JPEG ou WebP, 1600 px de large maximum).
 
 ## Voir le site en local
 
