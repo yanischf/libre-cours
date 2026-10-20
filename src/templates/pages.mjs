@@ -53,7 +53,7 @@ ${photo({
     alt: "Une dizaine de voisins debout en cercle dans un bar aux murs de briques, qui discutent et s'écoutent",
     ratio: 1.1,
   })}
-<div class="bulle"><p class="bulle__label">La question au mur</p><p class="bulle__q">Que faudrait-il à ce quartier pour qu'on y reste ?</p></div>
+<div class="bulle"><p class="bulle__label">La question au mur</p><p class="bulle__q">De quoi on devrait parler plus souvent, ici ?</p></div>
 </div>
 </div>
 <div class="moment__droite">
