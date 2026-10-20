@@ -74,7 +74,7 @@ ${ETAPES_MOMENT.map(([titre, texte], i) => `<li${anim('rise', i * 140)}><span cl
 </ol>
 </section>
 
-<div class="bandeau"><div class="wrap"><p${anim()}>Rien à vendre, rien à prouver, personne à convaincre. Juste un moment où votre voix compte.</p></div></div>
+<div class="bandeau"><div class="wrap"><p${anim()}>Rien à vendre, rien à prouver, personne à convaincre. Juste un moment où votre voix a de la place.</p></div></div>
 
 <section id="dates" class="fond-marine" aria-labelledby="dates-titre">
 <div class="wrap section-dates">
